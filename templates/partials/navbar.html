@@ -1,0 +1,35 @@
+<div class="navbar navbar-expand-md navbar-dark">
+    <div class="navbar-brand">
+        <a href="{% url 'home' %}">
+            <span>ISCRAPE</span>
+        </a>
+    </div>
+    <div class="d-md-none">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+            <i class="icon-paragraph-justify3"></i>
+        </button>
+    </div>
+
+{#    <div class="collapse navbar-collapse" id="navbar-mobile">#}
+{#        <ul class="navbar-nav ml-auto">#}
+{#            {% if user.is_authenticated %}#}
+{#                <li class="nav-item">#}
+{#                    <a href="#" class="navbar-nav-link">Home</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <form id="logout_form" action="{% url 'account_logout' %}" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <a class="navbar-nav-link" onclick="document.getElementById('logout_form').submit();">Logout</a>#}
+{#                    </form>#}
+{#                </li>#}
+{#            {% else %}#}
+{#                <li class="nav-item">#}
+{#                    <a href="{% url 'account_login' %}" class="navbar-nav-link">Log In</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a href="{% url 'account_signup' %}" class="navbar-nav-link">Sign Up</a>#}
+{#                </li>#}
+{#            {% endif %}#}
+{#        </ul>#}
+{#    </div>#}
+</div>

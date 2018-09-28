@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block content %}
+    {% load socialaccount %}
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="content d-flex justify-content-center ">
+                <form class="login-form" action="{% url 'account_signup' %}" method="post">
+                    {% csrf_token %}
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+								<i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+								<h5 class="mb-0">Sign up</h5>
+							</div>
+
+                            {% if form.errors and 'email' in form.errors%}
+                                <span class="form-text text-danger"><i class="icon-cancel-circle2 mr-2"></i>Email already exists.</span>
+                            {% endif %}
+
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+								<input type="email" class="form-control" placeholder="Email" name="email" id="id_email" required>
+								<div class="form-control-feedback">
+									<i class="icon-user text-muted"></i>
+								</div>
+							</div>
+
+							<div class="form-group form-group-feedback form-group-feedback-left">
+								<input type="password" class="form-control" placeholder="Password" name="password1" id="id_password1" minlength="8" required>
+								<div class="form-control-feedback">
+									<i class="icon-lock2 text-muted"></i>
+								</div>
+							</div>
+
+                            {% if form.errors and 'password2' in form.errors%}
+                                <span class="form-text text-danger"><i class="icon-cancel-circle2 mr-2"></i>Password does not match.</span>
+                            {% endif %}
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+								<input type="password" class="form-control" placeholder="Password (again)" name="password2" minlength="8" id="id_password2" required>
+								<div class="form-control-feedback">
+									<i class="icon-lock2 text-muted"></i>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<button type="submit" class="btn bg-teal-400 btn-block">Sign up <i class="icon-circle-right2 ml-2"></i></button>
+							</div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_javascript%}
+<script src="{% static 'assets/js/plugins/forms/styling/uniform.min.js' %}"></script>
+<script>
+var LoginRegistration = function () {
+
+
+    //
+    // Setup module components
+    //
+
+    // Uniform
+    var _componentUniform = function() {
+        if (!$().uniform) {
+            console.warn('Warning - uniform.min.js is not loaded.');
+            return;
+        }
+
+        // Initialize
+        $('.form-input-styled').uniform();
+    };
+
+
+    //
+    // Return objects assigned to module
+    //
+
+    return {
+        initComponents: function() {
+            _componentUniform();
+        }
+    }
+}();
+
+
+// Initialize module
+// ------------------------------
+
+document.addEventListener('DOMContentLoaded', function() {
+    LoginRegistration.initComponents();
+});
+</script>
+{% endblock %}
