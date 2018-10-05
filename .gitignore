@@ -2,5 +2,7 @@
 .env
 db.sqlite3
 __pycache__
+/iscrape/__pycache__
+/app/__pycache__
 /py3
 /iscrape/.env
