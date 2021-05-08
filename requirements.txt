@@ -12,7 +12,7 @@ django-debug-toolbar==1.9.1
 django-environ==0.4.5
 dnspython==1.15.0
 et-xmlfile==1.0.1
-eventlet==0.24.1
+eventlet==0.31.0
 greenlet==0.4.15
 idna==2.7
 instaloader==4.1
