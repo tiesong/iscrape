@@ -19,7 +19,7 @@ instaloader==4.1
 jdcal==1.4
 kombu==4.2.1
 monotonic==1.5
-numpy==1.15.2
+numpy==1.22.0
 oauthlib==2.1.0
 openpyxl==2.5.8
 pandas==0.23.4
